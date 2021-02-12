@@ -1,6 +1,7 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
 
+  
  function LogIn(props) {
     const { handleSubmit, pristine, reset, submitting } = props
     return (
@@ -42,4 +43,5 @@ import { Field, reduxForm } from 'redux-form'
 
 export default reduxForm({
     form:'login',
+   
 })(LogIn)

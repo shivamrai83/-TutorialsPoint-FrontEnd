@@ -9,6 +9,7 @@ import LogIn from './LogIn'
 import SingUp from './SingUp'
 
 export default function index() {
+  
     return (
         <Router>
         <div>

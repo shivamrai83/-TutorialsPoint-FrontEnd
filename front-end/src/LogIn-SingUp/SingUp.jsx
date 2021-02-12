@@ -1,5 +1,6 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
+import axios from 'axios';
 
 const SimpleForm = props => {
   const { handleSubmit, pristine, reset, submitting } = props
@@ -64,7 +65,13 @@ const SimpleForm = props => {
     </form>
   )
 }
+const apiRequest=(values)=>{
+  console.log(values);  
+  const {fullName, email, phone, password} = values;
+  axios.post("http://localhost:3008/singup",{fullName,email,phone,password});
+}
 
 export default reduxForm({
-  form: 'singup' 
+  form: 'singup',
+  onSubmit:apiRequest, 
 })(SimpleForm)
