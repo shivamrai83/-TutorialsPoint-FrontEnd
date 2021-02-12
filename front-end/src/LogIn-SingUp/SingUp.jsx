@@ -45,7 +45,7 @@ const SimpleForm = props => {
         <label>Phone Number</label>
         <div>
           <Field
-            name="Phone"
+            name="phone"
             component="input"
             type="number"
             placeholder="Phone Number.."
