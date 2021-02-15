@@ -1,9 +1,13 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
+import {reset} from 'redux-form';
+import { useHistory } from "react-router-dom";
+
 import axios from 'axios';
 
 const SimpleForm = props => {
   const { handleSubmit, pristine, reset, submitting } = props
+
   return (
     <form onSubmit={handleSubmit}>
       <div>
@@ -65,10 +69,11 @@ const SimpleForm = props => {
     </form>
   )
 }
-const apiRequest=(values)=>{
-  console.log(values);  
+const apiRequest=async (values,dispatch)=>{
   const {fullName, email, phone, password} = values;
   axios.post("http://localhost:3008/singup",{fullName,email,phone,password});
+  alert("you are Sucessfully SingUp");
+  dispatch(reset('singup'));
 }
 
 export default reduxForm({

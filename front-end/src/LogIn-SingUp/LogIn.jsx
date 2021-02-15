@@ -1,7 +1,7 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
+import axios from 'axios';
 
-  
  function LogIn(props) {
     const { handleSubmit, pristine, reset, submitting } = props
     return (
@@ -41,7 +41,13 @@ import { Field, reduxForm } from 'redux-form'
     )
 }
 
+async function LogInRequest(values){
+  const {email,password} = values;
+  const {token_value}=await axios.post("http://localhost:3008/login",{email,password});
+  console.log(token_value);
+}
+
 export default reduxForm({
     form:'login',
-   
-})(LogIn)
+    onSubmit:LogInRequest,
+})(LogIn) 
