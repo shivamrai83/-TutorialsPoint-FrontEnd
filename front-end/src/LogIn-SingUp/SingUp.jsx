@@ -1,8 +1,6 @@
 import React from 'react'
-import { Field, reduxForm } from 'redux-form'
+import { reduxForm, Field } from 'redux-form'
 import {reset} from 'redux-form';
-import { useHistory } from "react-router-dom";
-
 import axios from 'axios';
 
 const SimpleForm = props => {
