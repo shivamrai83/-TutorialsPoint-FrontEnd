@@ -6,7 +6,8 @@ import {
   Link,
 } from "react-router-dom";
 import Index from './LogIn-SingUp/index'
-import Dashboard from './Dashboard/index'
+
+
 function App() {
   return (
     <div className="App">
@@ -14,14 +15,10 @@ function App() {
         <Router>
         <ul>
               <Link to="/index">Index</Link> &nbsp;
-              <Link to="/dashboard">dashboard</Link> &nbsp;
           </ul>
         <Switch>
             <Route exact path="/index">
               <Index/>
-            </Route>
-            <Route path="/dashboard">
-              <Dashboard/>
             </Route>
           </Switch>
           </Router>

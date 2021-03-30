@@ -5,6 +5,7 @@ import {
     Route,
     Link
   } from "react-router-dom";
+import D4 from '../Dashboard/D4'  
 import LogIn from './login'
 import SingUp from './singup'
   export default function index() { 
@@ -23,6 +24,9 @@ import SingUp from './singup'
             </Route>
             <Route path="/singUp">
               <SingUp/>
+            </Route>
+            <Route path="/dashboard">
+              <D4/>
             </Route>
           </Switch>
         </div>
