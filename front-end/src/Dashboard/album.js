@@ -1,7 +1,6 @@
 import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
-import CameraIcon from '@material-ui/icons/PhotoCamera';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -12,15 +11,16 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-// import Link from '@material-ui/core/Link';
+import JS from './js/javascript';
+import Reacts from './react/react';
+import Node from './node/node'
+
 import {
-    Link,
     BrowserRouter as Router,
     Switch,
     Route,
-    useHistory,
+    Link,
   } from "react-router-dom";
-import D4 from './D4'
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -62,29 +62,61 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(6),
   },
+  toolbar:{
+      backgroundColor:'black'
+  }
 }));
 
-const cards = [{course:"JavaScript",
-                desc:"Learn Javascript with Fun"},
-                {course:"React",
-                desc:"Learn React with Fun"},
-                {course:"Node",
-                desc:"Learn Node with Fun"}
+const cards = [
+            {   
+                course:"JavaScript",
+                desc:"Learn Javascript with Fun",
+                button:"Learn Js",
+                link:"/js",
+                image:"https://blog.logrocket.com/wp-content/uploads/2020/10/deep-cloning-objects-javascript.png"
+            },
+            {   
+                course:"React",
+                desc:"Learn React with Fun",
+                button:"Learn React",
+                link:"/react",
+                image:"https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:705/https://www.filepicker.io/api/file/fGWjtyQtG4JE7UXgaPAN"
+            },
+            {   course:"Node",
+                desc:"Learn Node with Fun",
+                button:"Learn Node",
+                link:"/node",
+                image:"https://tsh.io/wp-content/uploads/2019/05/node-js-injection_.jpg"
+            }
             ];
 
 export default function Album() {
   const classes = useStyles();
-  let history = useHistory();
+  
   return (
     <React.Fragment>
     <Router>
+    <Switch>
+           {/* <Route path="/" component = {<JS/>}>
+           <Redriect from='/blog/' to="/tutorials/" />
+           <Route path="/tutorials/" component={About} /> */}
+            <Route exact path="/js">
+              <JS/>
+            </Route>
+            <Route exact path="/react">
+                <Reacts/>
+            </Route>
+            <Route exact path="/node">
+                <Node/>
+            </Route>
+    </Switch>
       <CssBaseline />
       <AppBar position="relative">
-        <Toolbar>
-          <CameraIcon className={classes.icon} />
+        <Toolbar className={classes.toolbar}>
+          {/* <CameraIcon className={classes.icon} />
           <Typography variant="h6" color="inherit" noWrap>
             Album layout
-          </Typography>
+          </Typography> */}
         </Toolbar>
       </AppBar>
       <main>
@@ -92,12 +124,10 @@ export default function Album() {
         <div className={classes.heroContent}>
           <Container maxWidth="sm">
             <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-              Album layout
+              WELCOME 
             </Typography>
             <Typography variant="h5" align="center" color="textSecondary" paragraph>
-              Something short and leading about the collection below—its contents, the creator, etc.
-              Make it short and sweet, but not too short so folks don&apos;t simply skip over it
-              entirely.
+              MASTER THE WEB DEVELOPEMENT WITH LOCALHOST
             </Typography>
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
@@ -123,7 +153,7 @@ export default function Album() {
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
-                    image="https://source.unsplash.com/random"
+                    image={card.image}
                     title="Image title"
                   />
                   <CardContent className={classes.cardContent}>
@@ -135,12 +165,10 @@ export default function Album() {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Button size="small" color="primary" onClick={history.push("/dash")}>
-                    view
-                    </Button>
-                    <Button size="small" color="primary">
+                  <Link to={card.link}>{card.button}</Link> &nbsp;
+                    {/* <Button size="small" color="primary">
                       Edit
-                    </Button>
+                    </Button> */}
                   </CardActions>
                 </Card>
               </Grid>
@@ -151,10 +179,10 @@ export default function Album() {
       {/* Footer */}
       <footer className={classes.footer}>
         <Typography variant="h6" align="center" gutterBottom>
-          Footer
+          All the content is Upar...^...
         </Typography>
         <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-          Something here to give the footer a purpose!
+        The Pessimist Sees Difficulty In Every Opportunity. The Optimist Sees Opportunity In Every Difficulty
         </Typography>
         <Copyright />
       </footer>

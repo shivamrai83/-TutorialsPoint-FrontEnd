@@ -62,8 +62,7 @@ function LogIn() {
     });
     console.log(token);
     if (token.data.token_value) {
-      debugger;
-      history.push("/dashboard");
+      history.push("/album");
       localStorage.setItem("token", JSON.stringify(token.data.token_value));
     }
     else{
