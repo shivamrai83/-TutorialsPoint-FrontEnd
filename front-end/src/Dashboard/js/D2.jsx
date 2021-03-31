@@ -9,34 +9,27 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import HomeIcon from '@material-ui/icons/Home';
-import PeopleIcon from '@material-ui/icons/People';
-import DnsRoundedIcon from '@material-ui/icons/DnsRounded';
-import PermMediaOutlinedIcon from '@material-ui/icons/PhotoSizeSelectActual';
-import PublicIcon from '@material-ui/icons/Public';
-import SettingsEthernetIcon from '@material-ui/icons/SettingsEthernet';
-import SettingsInputComponentIcon from '@material-ui/icons/SettingsInputComponent';
-import TimerIcon from '@material-ui/icons/Timer';
-import SettingsIcon from '@material-ui/icons/Settings';
-import PhonelinkSetupIcon from '@material-ui/icons/PhonelinkSetup';
+import MovieFilterIcon from '@material-ui/icons/MovieFilter';
+import OndemandVideoIcon from '@material-ui/icons/OndemandVideo';
 
 const categories = [
   {
-    id: 'Develop',
+    id: 'Videos',
     children: [
-      { id: 'Authentication', icon: <PeopleIcon />, active: true },
-      { id: 'Database', icon: <DnsRoundedIcon /> },
-      { id: 'Storage', icon: <PermMediaOutlinedIcon /> },
-      { id: 'Hosting', icon: <PublicIcon /> },
-      { id: 'Functions', icon: <SettingsEthernetIcon /> },
-      { id: 'ML Kit', icon: <SettingsInputComponentIcon /> },
+      { id: 'Authentication', icon: <MovieFilterIcon />, active: true },
+      { id: 'Database', icon: <MovieFilterIcon /> },
+      { id: 'Storage', icon: <MovieFilterIcon /> },
+      { id: 'Hosting', icon: <MovieFilterIcon /> },
+      { id: 'Functions', icon: <MovieFilterIcon /> },
+      { id: 'ML Kit', icon: <MovieFilterIcon /> },
     ],
   },
   {
-    id: 'Quality',
+    id: 'Project',
     children: [
-      { id: 'Analytics', icon: <SettingsIcon /> },
-      { id: 'Performance', icon: <TimerIcon /> },
-      { id: 'Test Lab', icon: <PhonelinkSetupIcon /> },
+      { id: 'Analytics', icon: <OndemandVideoIcon /> },
+      { id: 'Performance', icon: <OndemandVideoIcon /> },
+      { id: 'Test Lab', icon: <OndemandVideoIcon /> },
     ],
   },
 ];
@@ -100,7 +93,7 @@ function Navigator(props) {
               primary: classes.itemPrimary,
             }}
           >
-            Zero to Hero
+           JavaScript (Zero to Hero)
           </ListItemText>
         </ListItem>
         {categories.map(({ id, children }) => (

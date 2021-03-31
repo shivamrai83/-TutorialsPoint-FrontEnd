@@ -92,7 +92,7 @@ const cards = [
 
 export default function Album() {
   const classes = useStyles();
-  
+
   return (
     <React.Fragment>
     <Router>
@@ -166,9 +166,9 @@ export default function Album() {
                   </CardContent>
                   <CardActions>
                   <Link to={card.link}>{card.button}</Link> &nbsp;
-                    {/* <Button size="small" color="primary">
+                    <Button size="small" color="primary">
                       Edit
-                    </Button> */}
+                    </Button>
                   </CardActions>
                 </Card>
               </Grid>

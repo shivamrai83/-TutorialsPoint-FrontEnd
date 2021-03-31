@@ -100,7 +100,7 @@ function Navigator(props) {
               primary: classes.itemPrimary,
             }}
           >
-            Zero to Hero
+            React (Zero to Hero)
           </ListItemText>
         </ListItem>
         {categories.map(({ id, children }) => (
