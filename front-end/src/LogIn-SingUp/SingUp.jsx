@@ -1,10 +1,10 @@
-import React from 'react'
-import { reduxForm, Field } from 'redux-form'
-import {reset} from 'redux-form';
-import axios from 'axios';
+import React from "react";
+import { reduxForm, Field } from "redux-form";
+import { reset } from "redux-form";
+import axios from "axios";
 
-const SimpleForm = props => {
-  const { handleSubmit, pristine, reset, submitting } = props
+const SimpleForm = (props) => {
+  const { handleSubmit, pristine, reset, submitting } = props;
 
   return (
     <form onSubmit={handleSubmit}>
@@ -19,7 +19,7 @@ const SimpleForm = props => {
           />
         </div>
       </div>
-     
+
       <div>
         <label>Email</label>
         <div>
@@ -54,7 +54,7 @@ const SimpleForm = props => {
             placeholder="Phone Number.."
           />
         </div>
-      </div>  
+      </div>
 
       <div>
         <button type="submit" disabled={pristine || submitting}>
@@ -65,16 +65,21 @@ const SimpleForm = props => {
         </button>
       </div>
     </form>
-  )
-}
-const apiRequest=async (values,dispatch)=>{
-  const {fullName, email, phone, password} = values;
-  axios.post("http://localhost:3008/singup",{fullName,email,phone,password});
+  );
+};
+const apiRequest = async (values, dispatch) => {
+  const { fullName, email, phone, password } = values;
+  axios.post("http://localhost:3008/singup", {
+    fullName,
+    email,
+    phone,
+    password,
+  });
   alert("you are Sucessfully SingUp");
-  dispatch(reset('singup'));
-}
+  dispatch(reset("singup"));
+};
 
 export default reduxForm({
-  form: 'singup',
-  onSubmit:apiRequest, 
-})(SimpleForm)
+  form: "singup",
+  onSubmit: apiRequest,
+})(SimpleForm);

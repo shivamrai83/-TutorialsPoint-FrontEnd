@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
 } from "react-router-dom";  
 import Album from './Dashboard/album'
 import LogIn from './LogIn-SingUp/login'
@@ -14,10 +13,6 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Router>
-        <ul>
-              <Link to="/login">LogIn</Link> &nbsp;
-              <Link to="/singUp">SingUp</Link> &nbsp;
-          </ul>
         <Switch>
             <Route exact path="/login">
               <LogIn/>

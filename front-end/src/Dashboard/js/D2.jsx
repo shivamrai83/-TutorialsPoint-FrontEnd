@@ -9,30 +9,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import HomeIcon from '@material-ui/icons/Home';
-import MovieFilterIcon from '@material-ui/icons/MovieFilter';
-import OndemandVideoIcon from '@material-ui/icons/OndemandVideo';
 
-const categories = [
-  {
-    id: 'Videos',
-    children: [
-      { id: 'Authentication', icon: <MovieFilterIcon />, active: true },
-      { id: 'Database', icon: <MovieFilterIcon /> },
-      { id: 'Storage', icon: <MovieFilterIcon /> },
-      { id: 'Hosting', icon: <MovieFilterIcon /> },
-      { id: 'Functions', icon: <MovieFilterIcon /> },
-      { id: 'ML Kit', icon: <MovieFilterIcon /> },
-    ],
-  },
-  {
-    id: 'Project',
-    children: [
-      { id: 'Analytics', icon: <OndemandVideoIcon /> },
-      { id: 'Performance', icon: <OndemandVideoIcon /> },
-      { id: 'Test Lab', icon: <OndemandVideoIcon /> },
-    ],
-  },
-];
 
 const styles = (theme) => ({
   categoryHeader: {
@@ -76,7 +53,8 @@ const styles = (theme) => ({
 });
 
 function Navigator(props) {
-  const { classes, ...other } = props;
+  const { classes, categories, active, setActive, ...other } = props;
+  console.log(active);
 
   return (
     <Drawer variant="permanent" {...other}>
@@ -110,7 +88,7 @@ function Navigator(props) {
             {children.map(({ id: childId, icon, active }) => (
               <ListItem
                 key={childId}
-                button
+                
                 className={clsx(classes.item, active && classes.itemActiveItem)}
               >
                 <ListItemIcon className={classes.itemIcon}>{icon}</ListItemIcon>
@@ -128,12 +106,19 @@ function Navigator(props) {
           </React.Fragment>
         ))}
       </List>
+
+      <div>
+        <button>change</button>
+        {active}
+      </div>
     </Drawer>
+    
   );
 }
 
 Navigator.propTypes = {
   classes: PropTypes.object.isRequired,
+  categories:PropTypes.array,
 };
 
 export default withStyles(styles)(Navigator);
