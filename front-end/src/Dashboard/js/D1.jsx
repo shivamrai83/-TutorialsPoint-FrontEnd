@@ -6,8 +6,8 @@ import VideoPlayer from 'react-video-js-player';
 const styles = (theme) => ({
   paper: {
     maxWidth: 'auto',
-    margin: 'auto',
-    overflow: 'hidden',
+    margin: 'auto', 
+    // overflow: 'hidden',
   },
 });
 
@@ -16,7 +16,7 @@ function Content(props) {
 
   return (
     <div>
-    <VideoPlayer 
+    <VideoPlayer className={classes.paper}
     src="https://cdn.videvo.net/videvo_files/video/premium/video0007/small_watermarked/black_headz_spin4k05_preview.webm" 
     width="auto"
     height="auto"

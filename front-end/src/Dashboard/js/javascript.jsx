@@ -154,6 +154,7 @@ const styles = {
     flex: 1,
     padding: theme.spacing(6, 4),
     background: '#eaeff1',
+    width: '100%',
   },
   footer: {
     padding: theme.spacing(2),
