@@ -11,6 +11,8 @@ import Tooltip from "@material-ui/core/Tooltip";
 import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
 import ContactPhoneIcon from "@material-ui/icons/ContactPhone";
+import Tab from '@material-ui/core/Tab';
+import Tabs from '@material-ui/core/Tabs';
 
 const lightColor = "rgba(255, 255, 255, 0.7)";
 
@@ -85,14 +87,14 @@ function Header(props) {
         color="primary"
         position="static"
         elevation={0}
-      ></AppBar>
-      <AppBar
-        component="div"
-        className={classes.secondaryBar}
-        color="primary"
-        position="static"
-        elevation={0}
-      ></AppBar>
+      >
+        <Tabs value={0} textColor="inherit">
+          <Tab textColor="inherit" label="Users" />
+          <Tab textColor="inherit" label="Sign-in method" />
+          <Tab textColor="inherit" label="Templates" />
+          <Tab textColor="inherit" label="Usage" />
+        </Tabs>
+      </AppBar>
     </React.Fragment>
   );
 }
