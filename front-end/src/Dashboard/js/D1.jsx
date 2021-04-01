@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-import VideoPlayer from "react-video-js-player";
+import { ReactVideo } from "reactjs-media";
 
 const styles = (theme) => ({
   paper: {
@@ -16,12 +16,10 @@ function Content(props) {
 
   return (
     <div>
-      <VideoPlayer
-        className={classes.paper}
+      <ReactVideo
         // src="https://cdn.videvo.net/videvo_files/video/premium/video0007/small_watermarked/black_headz_spin4k05_preview.webm"
         src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
-        width="auto"
-        height="360"
+        primaryColor="yellow"
       />
     </div>
   );
