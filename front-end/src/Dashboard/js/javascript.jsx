@@ -12,9 +12,9 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Hidden from "@material-ui/core/Hidden";
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
-import D2 from "./D2";
-import D1 from "./D1";
-import D3 from "./D3";
+import D2 from "./Sidebar";
+import D1 from "./Video";
+import D3 from "./Header";
 import {DashboardProvider} from "../DashboardContext"
 
 function Copyright() {
