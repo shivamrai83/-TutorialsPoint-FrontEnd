@@ -55,8 +55,10 @@ const styles = (theme) => ({
 function Navigator(props) {
   const { classes, active, setActive, ...other } = props;
   console.log(active);
-  const categories = useContext(Context);
-  console.log("categories",categories);
+  
+  const {categories, videoId, setVideoId} = useContext(Context);
+
+  console.log("categories",videoId);
   return (
     <Drawer variant="permanent" {...other}>
       <List disablePadding>
@@ -89,7 +91,7 @@ function Navigator(props) {
             {children.map(({ id: childId, icon, active }) => (
               <ListItem
                 key={childId}
-                // onClick = {alert("I am in")} 
+                onClick = {()=>setVideoId(childId)} 
                 className={clsx(classes.item, active && classes.itemActiveItem)}
               >
                 <ListItemIcon className={classes.itemIcon}>{icon}</ListItemIcon>

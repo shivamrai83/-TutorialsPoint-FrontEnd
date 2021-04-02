@@ -15,11 +15,10 @@ import Link from "@material-ui/core/Link";
 import D2 from "./Sidebar";
 import D1 from "./Video";
 import D3 from "./Header";
-import {DashboardProvider} from "../DashboardContext"
+import { DashboardProvider } from "../DashboardContext";
 
 function Copyright() {
   return (
-    
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
       <Link color="inherit" href="https://material-ui.com/">
@@ -207,44 +206,46 @@ function Paperbase(props) {
     setMobileOpen(!mobileOpen);
   };
 
+  const [videoId, setVideoId] = React.useState("");
+
   return (
-    <DashboardProvider value = {categories} >
-    <ThemeProvider theme={theme}>
-      <div className={classes.root}>
-        <CssBaseline />
-        <nav className={classes.drawer}>
-          <Hidden smUp implementation="js">
-            <D2
-              PaperProps={{ style: { width: drawerWidth } }}
-              active={active}
-              setActive={setActive}
-              variant="temporary"
-              open={mobileOpen}
-              onClose={handleDrawerToggle}
-            />
-          </Hidden>
-          {
-            <Hidden xsDown implementation="css">
+    <DashboardProvider value={{ categories, videoId, setVideoId }}>
+      <ThemeProvider theme={theme}>
+        <div className={classes.root}>
+          <CssBaseline />
+          <nav className={classes.drawer}>
+            <Hidden smUp implementation="js">
               <D2
                 PaperProps={{ style: { width: drawerWidth } }}
                 active={active}
                 setActive={setActive}
+                variant="temporary"
+                open={mobileOpen}
+                onClose={handleDrawerToggle}
               />
             </Hidden>
-          }
-        </nav>
-        <div className={classes.app}>
-          <D3 onDrawerToggle={handleDrawerToggle} />
-          <main className={classes.main}>
-            <D1 />
-          </main>
-          <footer className={classes.footer}>
-            <Copyright />
-          </footer>
+            {
+              <Hidden xsDown implementation="css">
+                <D2
+                  PaperProps={{ style: { width: drawerWidth } }}
+                  active={active}
+                  setActive={setActive}
+                />
+              </Hidden>
+            }
+          </nav>
+          <div className={classes.app}>
+            <D3 onDrawerToggle={handleDrawerToggle} />
+            <main className={classes.main}>
+              <D1/>
+            </main>
+            <footer className={classes.footer}>
+              <Copyright />
+            </footer>
+          </div>
         </div>
-      </div>
-      <div>{active}</div>
-    </ThemeProvider>
+        <div>{active}</div>
+      </ThemeProvider>
     </DashboardProvider>
   );
 }
