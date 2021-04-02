@@ -1,5 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
+import MovieFilterIcon from "@material-ui/icons/MovieFilter";
+import OndemandVideoIcon from "@material-ui/icons/OndemandVideo";
+
 import {
   createMuiTheme,
   ThemeProvider,
@@ -12,38 +15,11 @@ import Link from "@material-ui/core/Link";
 import D2 from "./D2";
 import D1 from "./D1";
 import D3 from "./D3";
-import MovieFilterIcon from "@material-ui/icons/MovieFilter";
-import OndemandVideoIcon from "@material-ui/icons/OndemandVideo";
-
-const categories = [
-  {
-    id: "Videos",
-    children: [
-      {
-        id: "Test Video",
-        icon: <MovieFilterIcon />,
-        video:
-          "https://cdn.videvo.net/videvo_files/video/premium/video0007/small_watermarked/black_headz_spin4k05_preview.webm",
-      },
-      { id: "Database", icon: <MovieFilterIcon /> },
-      { id: "Storage", icon: <MovieFilterIcon /> },
-      { id: "Hosting", icon: <MovieFilterIcon /> },
-      { id: "Functions", icon: <MovieFilterIcon /> },
-      { id: "ML Kit", icon: <MovieFilterIcon /> },
-    ],
-  },
-  {
-    id: "Project",
-    children: [
-      { id: "Analytics", icon: <OndemandVideoIcon /> },
-      { id: "Performance", icon: <OndemandVideoIcon /> },
-      { id: "Test Lab", icon: <OndemandVideoIcon /> },
-    ],
-  },
-];
+import {DashboardProvider} from "../DashboardContext"
 
 function Copyright() {
   return (
+    
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
       <Link color="inherit" href="https://material-ui.com/">
@@ -195,6 +171,33 @@ const styles = {
   },
 };
 
+const categories = [
+  {
+    id: "Videos",
+    children: [
+      {
+        id: "Test Video",
+        icon: <MovieFilterIcon />,
+        video:
+          "https://cdn.videvo.net/videvo_files/video/premium/video0007/small_watermarked/black_headz_spin4k05_preview.webm",
+      },
+      { id: "Database", icon: <MovieFilterIcon /> },
+      { id: "Storage", icon: <MovieFilterIcon /> },
+      { id: "Hosting", icon: <MovieFilterIcon /> },
+      { id: "Functions", icon: <MovieFilterIcon /> },
+      { id: "ML Kit", icon: <MovieFilterIcon /> },
+    ],
+  },
+  {
+    id: "Project",
+    children: [
+      { id: "Analytics", icon: <OndemandVideoIcon /> },
+      { id: "Performance", icon: <OndemandVideoIcon /> },
+      { id: "Test Lab", icon: <OndemandVideoIcon /> },
+    ],
+  },
+];
+
 function Paperbase(props) {
   const { classes } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -203,8 +206,9 @@ function Paperbase(props) {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-  console.log("js", active);
+
   return (
+    <DashboardProvider value = {categories} >
     <ThemeProvider theme={theme}>
       <div className={classes.root}>
         <CssBaseline />
@@ -214,7 +218,6 @@ function Paperbase(props) {
               PaperProps={{ style: { width: drawerWidth } }}
               active={active}
               setActive={setActive}
-              categories={categories}
               variant="temporary"
               open={mobileOpen}
               onClose={handleDrawerToggle}
@@ -226,7 +229,6 @@ function Paperbase(props) {
                 PaperProps={{ style: { width: drawerWidth } }}
                 active={active}
                 setActive={setActive}
-                categories={categories}
               />
             </Hidden>
           }
@@ -243,6 +245,7 @@ function Paperbase(props) {
       </div>
       <div>{active}</div>
     </ThemeProvider>
+    </DashboardProvider>
   );
 }
 

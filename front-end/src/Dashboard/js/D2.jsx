@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { withStyles } from '@material-ui/core/styles';
@@ -9,7 +9,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import HomeIcon from '@material-ui/icons/Home';
-
+import Context from '../DashboardContext';
 
 const styles = (theme) => ({
   categoryHeader: {
@@ -53,9 +53,10 @@ const styles = (theme) => ({
 });
 
 function Navigator(props) {
-  const { classes, categories, active, setActive, ...other } = props;
+  const { classes, active, setActive, ...other } = props;
   console.log(active);
-
+  const categories = useContext(Context);
+  console.log("categories",categories);
   return (
     <Drawer variant="permanent" {...other}>
       <List disablePadding>
@@ -88,7 +89,7 @@ function Navigator(props) {
             {children.map(({ id: childId, icon, active }) => (
               <ListItem
                 key={childId}
-                
+                // onClick = {alert("I am in")} 
                 className={clsx(classes.item, active && classes.itemActiveItem)}
               >
                 <ListItemIcon className={classes.itemIcon}>{icon}</ListItemIcon>
@@ -118,7 +119,6 @@ function Navigator(props) {
 
 Navigator.propTypes = {
   classes: PropTypes.object.isRequired,
-  categories:PropTypes.array,
 };
 
 export default withStyles(styles)(Navigator);

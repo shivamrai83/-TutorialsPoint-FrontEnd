@@ -92,22 +92,10 @@ const cards = [
 
 export default function Album() {
   const classes = useStyles();
-  let { path } = useRouteMatch();
+  
   return (
     <React.Fragment>
-      <Router>
-        <Switch>
-          <Route exact path={`${path}/js`}>
-            <JS />
-          </Route>
-          <Route exact path={`${path}/react`}>
-            <Reacts />
-          </Route>
-          <Route exact path={`${path}/node`}>
-            <Node />
-          </Route>
-        </Switch>
-
+     
         <CssBaseline />
         <main>
           {/* Hero unit */}
@@ -164,7 +152,7 @@ export default function Album() {
                       <Typography>{card.desc}</Typography>
                     </CardContent>
                     <CardActions>
-                      <Link to={`${path}${card.link}`}>{card.button}</Link>{" "}
+                      <Link to={card.link}>{card.button}</Link>{" "}
                       &nbsp;
                     </CardActions>
                   </Card>
@@ -191,7 +179,6 @@ export default function Album() {
           <Copyright />
         </footer>
         {/* End footer */}
-      </Router>
     </React.Fragment>
   );
 }
