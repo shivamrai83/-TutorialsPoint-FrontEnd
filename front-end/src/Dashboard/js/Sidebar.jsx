@@ -53,9 +53,7 @@ const styles = (theme) => ({
 });
 
 function Navigator(props) {
-  const { classes, active, setActive, ...other } = props;
-  console.log(active);
-  
+  const { classes, ...other } = props;  
   const {categories, videoId, setVideoId} = useContext(Context);
 
   console.log("categories",videoId);
@@ -109,11 +107,6 @@ function Navigator(props) {
           </React.Fragment>
         ))}
       </List>
-
-      <div>
-        <button>change</button>
-        {active}
-      </div>
     </Drawer>
     
   );

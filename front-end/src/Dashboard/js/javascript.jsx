@@ -200,7 +200,6 @@ const categories = [
 function Paperbase(props) {
   const { classes } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [active, setActive] = React.useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -217,8 +216,6 @@ function Paperbase(props) {
             <Hidden smUp implementation="js">
               <D2
                 PaperProps={{ style: { width: drawerWidth } }}
-                active={active}
-                setActive={setActive}
                 variant="temporary"
                 open={mobileOpen}
                 onClose={handleDrawerToggle}
@@ -228,8 +225,6 @@ function Paperbase(props) {
               <Hidden xsDown implementation="css">
                 <D2
                   PaperProps={{ style: { width: drawerWidth } }}
-                  active={active}
-                  setActive={setActive}
                 />
               </Hidden>
             }
@@ -244,7 +239,6 @@ function Paperbase(props) {
             </footer>
           </div>
         </div>
-        <div>{active}</div>
       </ThemeProvider>
     </DashboardProvider>
   );

@@ -1,15 +1,7 @@
 import React, {useContext, useEffect, useState} from "react";
-import { withStyles } from "@material-ui/core/styles";
 import { ReactVideo } from "reactjs-media";
+// import { Player, ControlBar } from 'video-react';
 import Context from '../DashboardContext';
-
-const styles = (theme) => ({
-  paper: {
-    maxWidth: "auto",
-    margin: "auto",
-    // overflow: 'hidden',
-  },
-});
 
 function Content() {
   const {categories, videoId, } = useContext(Context);
@@ -34,8 +26,13 @@ function Content() {
         src={url ? url : "https://media.w3.org/2010/05/sintel/trailer_hd.mp4"}
         primaryColor="yellow"
       />
+
+        {/* <Player>
+          <source src={url} />
+          <ControlBar autoHide={false} />
+        </Player> */}
     </div>
   );
 }
 
-export default withStyles(styles)(Content);
+export default Content;
