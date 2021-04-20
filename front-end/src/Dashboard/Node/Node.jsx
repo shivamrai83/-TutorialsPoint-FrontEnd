@@ -12,9 +12,9 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Hidden from "@material-ui/core/Hidden";
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
-import D2 from "./Sidebar";
-import D1 from "./Video";
-import D3 from "./Header";
+import Sidebar from "./Sidebar";
+import Video from "./Video";
+import Header from "./Header";
 import { DashboardProvider } from "../DashboardContext";
 
 function Copyright() {
@@ -214,7 +214,7 @@ function Paperbase(props) {
           <CssBaseline />
           <nav className={classes.drawer}>
             <Hidden smUp implementation="js">
-              <D2
+              <Sidebar
                 PaperProps={{ style: { width: drawerWidth } }}
                 variant="temporary"
                 open={mobileOpen}
@@ -223,16 +223,16 @@ function Paperbase(props) {
             </Hidden>
             {
               <Hidden xsDown implementation="css">
-                <D2
+                <Sidebar
                   PaperProps={{ style: { width: drawerWidth } }}
                 />
               </Hidden>
             }
           </nav>
           <div className={classes.app}>
-            <D3 onDrawerToggle={handleDrawerToggle} />
+            <Header onDrawerToggle={handleDrawerToggle} />
             <main className={classes.main}>
-              <D1/>
+              <Video/>
             </main>
             <footer className={classes.footer}>
               <Copyright />
