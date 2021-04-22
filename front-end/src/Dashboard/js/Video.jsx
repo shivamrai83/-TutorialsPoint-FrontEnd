@@ -3,7 +3,7 @@ import { ReactVideo } from "reactjs-media";
 // import { Player, ControlBar } from 'video-react';
 import Context from '../DashboardContext';
 
-function Content() {
+function Content({video}) {
   const {categories, videoId, } = useContext(Context);
   const [url, setUrl] = useState();
 
@@ -18,14 +18,21 @@ function Content() {
     setUrl(videoUrl(videoId));
   },[videoId])
 
-  console.log("Video url",url)
-  
+  console.log("Video arr",video)
+  const vid = "https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
   return (
     <div>
-      <ReactVideo
-        src={url ? url : "https://media.w3.org/2010/05/sintel/trailer_hd.mp4"}
+      {video.map((vid)=>(
+        vid.id===videoId ? vid.video ? <ReactVideo
+        src={vid.video ? vid.video : vid }
         primaryColor="yellow"
-      />
+      /> : <React.Fragment />
+      : <React.Fragment />
+      ))}
+      {/* <ReactVideo
+        src={arr.children.video ? arr.children.video : vid }
+        primaryColor="yellow"
+      /> */}
 
         {/* <Player>
           <source src={url} />
