@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { ReactVideo } from "reactjs-media";
 import MovieFilterIcon from "@material-ui/icons/MovieFilter";
 import OndemandVideoIcon from "@material-ui/icons/OndemandVideo";
 
@@ -180,7 +181,7 @@ const categories = [
         video:
           "https://cdn.videvo.net/videvo_files/video/premium/video0007/small_watermarked/black_headz_spin4k05_preview.webm",
       },
-      { id: "Database", icon: <MovieFilterIcon /> },
+      { id: "Database", icon: <MovieFilterIcon/>, video: "https://media.w3.org/2010/05/sintel/trailer_hd.mp4" },
       { id: "Storage", icon: <MovieFilterIcon /> },
       { id: "Hosting", icon: <MovieFilterIcon /> },
       { id: "Functions", icon: <MovieFilterIcon /> },
@@ -204,9 +205,9 @@ function Paperbase(props) {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-
+  const vid = "https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
   const [videoId, setVideoId] = React.useState("");
-
+  console.log("Js Video Id",videoId);
   return (
     <DashboardProvider value={{ categories, videoId, setVideoId }}>
       <ThemeProvider theme={theme}>
@@ -223,16 +224,21 @@ function Paperbase(props) {
             </Hidden>
             {
               <Hidden xsDown implementation="css">
-                <Sidebar
-                  PaperProps={{ style: { width: drawerWidth } }}
-                />
+                <Sidebar PaperProps={{ style: { width: drawerWidth } }} />
               </Hidden>
             }
           </nav>
           <div className={classes.app}>
             <Header onDrawerToggle={handleDrawerToggle} />
             <main className={classes.main}>
-              <Video/>
+              {categories.map((arr) => (
+              arr.children[0].id===videoId ?
+              <ReactVideo
+                src={arr.children.video ? arr.children.video : vid }
+                primaryColor="yellow"
+              /> : null
+              ))
+            }
             </main>
             <footer className={classes.footer}>
               <Copyright />
