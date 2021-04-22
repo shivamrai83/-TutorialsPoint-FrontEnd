@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { ReactVideo } from "reactjs-media";
 import MovieFilterIcon from "@material-ui/icons/MovieFilter";
 import OndemandVideoIcon from "@material-ui/icons/OndemandVideo";
 
@@ -233,11 +232,6 @@ function Paperbase(props) {
             <main className={classes.main}>
               {categories.map((arr) => (
                 <Video video={arr.children}/>
-              // arr.children[0].id===videoId ?
-              // <ReactVideo
-              //   src={arr.children.video ? arr.children.video : vid }
-              //   primaryColor="yellow"
-              // /> : null
               ))
             }
             </main>
