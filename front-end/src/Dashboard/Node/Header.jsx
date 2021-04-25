@@ -62,7 +62,7 @@ function Header(props) {
 
             <Grid item xs>
               <Typography color="inherit" variant="h6" component="h1">
-                Node
+                JavaScript
               </Typography>
             </Grid>
 
