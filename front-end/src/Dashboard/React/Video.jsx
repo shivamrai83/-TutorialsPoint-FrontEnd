@@ -1,36 +1,21 @@
-import React, {useContext, useEffect, useState} from "react";
+import React, { useContext } from "react";
 import { ReactVideo } from "reactjs-media";
-// import { Player, ControlBar } from 'video-react';
-import Context from '../DashboardContext';
+import Context from "../DashboardContext";
 
-function Content() {
-  const {categories, videoId, } = useContext(Context);
-  const [url, setUrl] = useState();
+function Content({ video }) {
+  const { videoId } = useContext(Context);
 
-  const videoUrl = (videoId) => {
-    const id = categories[0].children[0].id;
-    if (videoId === id) {
-      return categories[0].children[0].video
-    }
-  };
-  
-  useEffect(()=>{
-    setUrl(videoUrl(videoId));
-  },[videoId])
-
-  console.log("Video url",url)
-  
+  const defaultVideo = "https://media.w3.org/2010/05/sintel/trailer_hd.mp4";
   return (
     <div>
-      <ReactVideo
-        src={url ? url : "https://media.w3.org/2010/05/sintel/trailer_hd.mp4"}
+      { videoId }
+      {video.map((vid)=>(
+        vid.id===videoId ? vid.video ? <ReactVideo
+        src={vid.video ? vid.video : defaultVideo }
         primaryColor="yellow"
-      />
-
-        {/* <Player>
-          <source src={url} />
-          <ControlBar autoHide={false} />
-        </Player> */}
+      /> : <React.Fragment />
+      : <React.Fragment />
+      ))}
     </div>
   );
 }
