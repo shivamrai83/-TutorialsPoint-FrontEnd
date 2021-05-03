@@ -206,7 +206,6 @@ function Paperbase(props) {
   };
   
   const [videoId, setVideoId] = React.useState("");
-  console.log("Js Video Id",videoId);
   return (
     <DashboardProvider value={{ categories, videoId, setVideoId }}>
       <ThemeProvider theme={theme}>

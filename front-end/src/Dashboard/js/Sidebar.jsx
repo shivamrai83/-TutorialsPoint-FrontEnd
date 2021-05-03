@@ -54,9 +54,8 @@ const styles = (theme) => ({
 
 function Navigator(props) {
   const { classes, ...other } = props;  
-  const {categories, videoId, setVideoId} = useContext(Context);
+  const {categories, setVideoId} = useContext(Context);
 
-  console.log("categories",videoId);
   return (
     <Drawer variant="permanent" {...other}>
       <List disablePadding>
