@@ -16,7 +16,7 @@ import {
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
-      {"Copyright © Shivam Rai   "} {new Date().getFullYear()}
+      {"Copyright © Shivam Rai "} {new Date().getFullYear()}
       {"."}
     </Typography>
   );
