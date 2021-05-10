@@ -158,7 +158,7 @@ export default function Album() {
         {/* Footer */}
         <footer className={classes.footer}>
           <Typography variant="h6" align="center" gutterBottom>
-            All the content is Upar...^...
+            All the content is Above.
           </Typography>
           <Typography
             variant="subtitle1"
