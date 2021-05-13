@@ -188,7 +188,7 @@ const categories = [
     ],
   },
   {
-    id: "Project",
+    id: "Exersise",
     children: [
       { id: "Analytics", icon: <OndemandVideoIcon /> },
       { id: "Performance", icon: <OndemandVideoIcon /> },
