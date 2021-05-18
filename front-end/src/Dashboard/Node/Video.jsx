@@ -12,7 +12,7 @@ function Content({ video }) {
       {video.map((vid)=>(
         vid.id===videoId ? vid.video ? <ReactVideo
         src={vid.video ? vid.video : defaultVideo }
-        primaryColor="blue"
+        primaryColor="green"
       /> : <React.Fragment />
       : <React.Fragment />
       ))}
