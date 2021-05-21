@@ -66,7 +66,7 @@ function LogIn() {
       localStorage.setItem("token", JSON.stringify(token.data.token_value));
     }
     else{
-      alert("Username or Password are incorrect")
+      alert("Either Username or Password are incorrect")
     }
   };
 
