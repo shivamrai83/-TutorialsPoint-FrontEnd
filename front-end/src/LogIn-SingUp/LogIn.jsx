@@ -43,7 +43,7 @@ import axios from 'axios';
 
 async function LogInRequest(values){
   const {email,password} = values;
-  const {token_value}=await axios.post("http://localhost:3008/login",{email,password});
+  const {token_value}=await axios.post("http://localhost:3008/login",{email, password});
   console.log(token_value);
 }
 
