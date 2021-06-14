@@ -64,7 +64,7 @@ const cards = [
     button: "Learn Js",
     link: "/js",
     image:
-      "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.simplytechnologies.net%2Fhow-when-and-where-js-works&psig=AOvVaw3D8gr4fBZnyJKXG55F6K7-&ust=1623759141029000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCNikgK6Ml_ECFQAAAAAdAAAAABAD",
+      "https://images.squarespace-cdn.com/content/v1/58d20c79725e25b221549193/1521098258210-W9FBV72SMJJX3LESUA7Z/ke17ZwdGBToddI8pDm48kNvT88LknE-K9M4pGNO0Iqd7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1USOFn4xF8vTWDNAUBm5ducQhX-V3oVjSmr829Rco4W2Uo49ZdOtO_QXox0_W7i2zEA/js.jpg?format=2500w",
   },
   {
     course: "React",
