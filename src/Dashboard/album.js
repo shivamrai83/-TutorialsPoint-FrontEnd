@@ -64,7 +64,7 @@ const cards = [
     button: "Learn Js",
     link: "/js",
     image:
-      "https://blog.logrocket.com/wp-content/uploads/2020/10/deep-cloning-objects-javascript.png",
+      "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.simplytechnologies.net%2Fhow-when-and-where-js-works&psig=AOvVaw3D8gr4fBZnyJKXG55F6K7-&ust=1623759141029000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCNikgK6Ml_ECFQAAAAAdAAAAABAD",
   },
   {
     course: "React",
