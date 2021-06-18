@@ -8,7 +8,6 @@ function Content({ video }) {
   const defaultVideo = "https://media.w3.org/2010/05/sintel/trailer_hd.mp4";
   return (
     <div>
-      { videoId }
       {video.map((vid)=>(
         vid.id===videoId ? vid.video ? <ReactVideo
         src={vid.video ? vid.video : defaultVideo }
