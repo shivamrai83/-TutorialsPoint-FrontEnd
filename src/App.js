@@ -22,7 +22,7 @@ function App() {
             <Route exact path="/singUp">
               <SingUp/>
             </Route>
-            <Route exact path="/album">
+            <Route exact path="/">
               <Album/>
             </Route>
             <Route exact path="/js">

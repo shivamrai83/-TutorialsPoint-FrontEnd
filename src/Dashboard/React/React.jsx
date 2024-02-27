@@ -170,6 +170,7 @@ const styles = {
   },
 };
 
+
 const categories = [
   {
     id: "Videos",
@@ -181,14 +182,14 @@ const categories = [
           "https://cdn.videvo.net/videvo_files/video/premium/video0007/small_watermarked/black_headz_spin4k05_preview.webm",
       },
       { id: "Database", icon: <MovieFilterIcon/>, video: "https://media.w3.org/2010/05/sintel/trailer_hd.mp4" },
-      { id: "Storage", icon: <MovieFilterIcon /> },
-      { id: "Hosting", icon: <MovieFilterIcon /> },
-      { id: "Functions", icon: <MovieFilterIcon /> },
-      { id: "ML Kit", icon: <MovieFilterIcon /> },
+      { id: "Storage", icon: <MovieFilterIcon />,  video: "https://media.w3.org/2010/05/sintel/trailer_hd.mp4"  },
+      { id: "Hosting", icon: <MovieFilterIcon />,  video: "https://media.w3.org/2010/05/sintel/trailer_hd.mp4"  },
+      { id: "Functions", icon: <MovieFilterIcon />,  video: "https://media.w3.org/2010/05/sintel/trailer_hd.mp4"  },
+      { id: "ML Kit", icon: <MovieFilterIcon />,  video: "https://media.w3.org/2010/05/sintel/trailer_hd.mp4"  },
     ],
   },
   {
-    id: "Project",
+    id: "Exersise",
     children: [
       { id: "Analytics", icon: <OndemandVideoIcon /> },
       { id: "Performance", icon: <OndemandVideoIcon /> },
